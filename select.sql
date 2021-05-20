@@ -1,3 +1,4 @@
-SELECT MyItemTable.Name
-FROM MyOrderTable,MyItemTable
-WHERE MyOrderTable.ItemId = MyItemTable.Id;
+SELECT MyOrderTable.OrderId, MyItemTable.ItemId
+FROM MyOrderTable, MyItemTable
+GROUP BY
+  MyOrderTable.OrderId;
