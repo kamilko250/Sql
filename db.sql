@@ -1,17 +1,17 @@
-Create table Order
+CREATE TABLE IF NOT EXISTS `MyOrderTable`
 (
-    Id int(2) primary key,
-    ItemId int(2) not null
+  `Id` INT(2),
+  `ItemId` INT(2) NOT NULL,
+  primary Key(`Id`)
 );
-Create table Item
+CREATE TABLE IF NOT EXISTS `MyItemTable`
 (
-    Id int(2) primary key,
-    ItemName varchar(10) not null
+  `Id` INT(2),
+  `Name` VARCHAR(20) NOT NULL,
+  primary Key(`Id`)
 );
-Insert into Item(0, PierwszyItem);
-Insert into Item(1, DrugiItem);
-Insert into Order(1, 0);
-
-Select Item.ItemName
-    from Item, Order
-    where Item.Id = Order.ItemId;
+INSERT INTO `MyOrderTable` VALUES
+  ('0','1');
+INSERT INTO `MyItemTable` VALUES
+  ('0','firstvalue'),
+  ('1','secondvalue');
