@@ -7,17 +7,20 @@ CREATE TABLE IF NOT EXISTS `MyItemTable`
 INSERT INTO `MyItemTable` VALUES
   ('0','firstvalue'),
   ('1','secondvalue'),
-  ('2','thirdvalue');
+  ('2','thirdvalue'),
+  ('3','fourthvalue');
 CREATE TABLE IF NOT EXISTS `MyOrderTable`
 (
   `OrderId` INT(2) NOT NULL,
   `ItemId` INT(2),
-   primary key(`OrderId`),
+   primary key(`OrderId`,`ItemId`),
    foreign key (`ItemId`) 
       references `MyItemTable`(`ItemId`)
         on delete cascade
 );
 INSERT INTO `MyOrderTable` VALUES
-  ('0','1'),
   ('1','1'),
-  ('2','2');
+  ('1','2'),
+  ('1','3'),
+  ('2','1'),
+  ('3','3');
