@@ -5,8 +5,8 @@ Create table Order
 );
 Create table Item
 (
-    Id primary key,
-    ItemName not null
+    Id int(2) primary key,
+    ItemName varchar(10) not null
 );
 Insert into Item(0, PierwszyItem);
 Insert into Item(1, DrugiItem);
